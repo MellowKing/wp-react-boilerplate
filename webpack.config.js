@@ -1,7 +1,6 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const webpack = require('webpack')
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const PATHS = {
   src: path.join(__dirname, 'src'),
@@ -9,6 +8,7 @@ const PATHS = {
 }
 
 module.exports = {
+  devtool: 'cheap-module-eval-source-map',
   entry: [
     'webpack-hot-middleware/client',
     path.join(PATHS.src, '/index.js'),
@@ -22,12 +22,11 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.join(PATHS.src, '/index.ejs'),
     }),
-    new ExtractTextPlugin('bundle.css', { allChunks: true }),
   ],
   module: {
     loaders: [
-      { test: /\.less$/,
-        loaders: ['style', 'css', 'less'],
+      { test: /\.css$/,
+        loaders: ['style-loader', 'css-loader'],
       },
     ],
   },

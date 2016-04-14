@@ -1,8 +1,10 @@
 const path = require('path')
 const express = require('express')
-var webpack = require('webpack')
-var config = require('./webpack.config')
-var webpackMiddleware = require('webpack-dev-middleware')
+const webpack = require('webpack')
+const config = require('./webpack.config')
+const webpackMiddleware = require('webpack-dev-middleware')
+const webpackHotMiddleware = require('webpack-hot-middleware')
+
 
 var app = express()
 var compiler = webpack(config)
@@ -14,7 +16,7 @@ app.use(webpackMiddleware(compiler, {
   }
 }))
 
-app.use(webpackMiddleware(compiler))
+app.use(webpackHotMiddleware(compiler))
 
 app.get('*', function(request, response) {
   response.sendFile(path.join(__dirname, 'build/index.html'))
