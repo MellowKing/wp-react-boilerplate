@@ -1,6 +1,7 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const webpack = require('webpack')
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const PATHS = {
   src: path.join(__dirname, 'src'),
@@ -21,5 +22,13 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.join(PATHS.src, '/index.ejs'),
     }),
-  ]
+    new ExtractTextPlugin('bundle.css', { allChunks: true }),
+  ],
+  module: {
+    loaders: [
+      { test: /\.less$/,
+        loaders: ['style', 'css', 'less'],
+      },
+    ],
+  },
 }
