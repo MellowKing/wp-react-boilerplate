@@ -1,0 +1,27 @@
+{
+  "name": "wp-react-boilerplate",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MellowKing/wp-react-boilerplate.git"
+  },
+  "keywords": [
+    "react",
+    "webpack",
+    "hot"
+  ],
+  "author": "Marten Truu",
+  "license": "WTFPL",
+  "bugs": {
+    "url": "https://github.com/MellowKing/wp-react-boilerplate/issues"
+  },
+  "homepage": "https://github.com/MellowKing/wp-react-boilerplate#readme",
+  "devDependencies": {
+    "webpack": "^1.12.15"
+  }
+}
