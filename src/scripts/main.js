@@ -9,6 +9,7 @@ import router from './router'
 
 
 function main() {
+  
   const target = document.getElementById('target')
   const devTools = window.devToolsExtension ? window.devToolsExtension() : (variable) => variable
   const finalCreateStore = compose(applyMiddleware(thunk), devTools)(createStore)

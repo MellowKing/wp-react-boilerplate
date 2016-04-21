@@ -1,2 +1,2 @@
-require('./styles/main.css')
-require('./scripts/main')
+require('./styles/main.scss')
+require('./scripts/main.js')
