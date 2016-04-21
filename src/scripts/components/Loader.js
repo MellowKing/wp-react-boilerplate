@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-const Loader = () => (
-  <div>
-    <h1>LOADING</h1>
-  </div>
-)
 
-Loader.displayName = 'Loader'
+export default class Loader extends Component {
 
-export default Loader
+  render() {
+    return (
+        <div>
+          LOADING...
+        </div>
+    )
+  }
+}

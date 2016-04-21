@@ -1,18 +1,20 @@
-import { React, PropTypes } from 'react'
-import connect from 'react-redux'
+import React, { Component, PropTypes } from 'react'
+import { connect } from 'react-redux'
 
-const App = ({ children }) => (
-  <div>
-    {children}
-  </div>
-)
 
-App.propTypes = {
-  children: PropTypes
-    .oneOfType([PropTypes.element, PropTypes.arrayOf(PropTypes.element)])
-    .isRequired,
+class App extends Component {
+  static propTypes = {
+    children: PropTypes.oneOfType([PropTypes.element, PropTypes.arrayOf(PropTypes.element)]),
+  };
+
+  render() {
+    const { children } = this.props
+    return (
+      <div>
+        {children}
+      </div>
+    )
+  }
 }
-
-App.displayName = 'App'
 
 export default connect((value) => value)(App)
